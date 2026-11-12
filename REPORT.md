@@ -16,8 +16,8 @@ Include:
 
 - Original Repo: `https://github.com/NoahGJAC/COMP-354-learn-python-team`
 - The URLs of forked repos for
-  - Student B: `TODO`
-  - Student C: `TODO`
+  - Student B: `https://github.com/DanielHaselock/COMP-354-learn-python-team`
+  - Student C: `https://github.com/vonAdlee/COMP-354-learn-python-team`
 
 ---
 
@@ -37,29 +37,10 @@ TODO
 *Creation of the original repository and its initial commits.*
 
 ### Step 2 — Fork and Clone
-
-Students B, and C must independently:
-
-1. Fork Student A's repository into their own GitHub accounts.
-2. Clone their respective forks onto their computers.
-3. Configure Student A's original repository as `upstream`.
-4. Verify their remote configurations using:
-
-```bash
-git remote -v
-```
-
-Each student must understand the difference between the `origin` and `upstream` remotes.
+TODO: Each student must understand the difference between the `origin` and `upstream` remotes.
 
 ### Step 3 — Synchronize the Forks
-
-After the initial forks have been created:
-
-1. Student A makes a small update to the project's README and pushes the change to the original repository.
-2. Students B, C, and D synchronize their local repositories and GitHub forks with the updated original repository.
-3. Each student verifies that the README update is available in their fork.
-
-In your report, briefly explain the difference between `origin` and `upstream` and describe how the synchronization was performed.
+TODO: In your report, briefly explain the difference between `origin` and `upstream` and describe how the synchronization was performed.
 
 ---
 
