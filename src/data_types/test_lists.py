@@ -408,3 +408,32 @@ def test_list_slicing():
 
     # Slice from index -4 to index -1 (exclusive)
     assert letters[-4:-1] == ['e', 'f', 'g']
+
+
+def test_list_concatenation_and_replication():
+    """List concatenation and replication examples."""
+
+    # Concatenation combines two lists into a new list
+    first = [1, 2, 3]
+    second = [4, 5, 6]
+    combined = first + second
+    assert combined == [1, 2, 3, 4, 5, 6]
+
+    # Replication repeats the list contents
+    repeated = ['a'] * 3
+    assert repeated == ['a', 'a', 'a']
+
+    # Concatenation does not modify the original lists
+    assert first == [1, 2, 3]
+    assert second == [4, 5, 6]
+
+
+def test_list_membership():
+    """List membership examples using the in operator."""
+
+    fruits = ['apple', 'banana', 'cherry']
+
+    assert 'apple' in fruits
+    assert 'banana' in fruits
+    assert 'orange' not in fruits
+    assert 'grape' not in fruits
