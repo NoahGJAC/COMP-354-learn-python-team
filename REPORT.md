@@ -37,10 +37,54 @@ TODO
 *Creation of the original repository and its initial commits.*
 
 ### Step 2 — Fork and Clone
-TODO: Each student must understand the difference between the `origin` and `upstream` remotes.
+
+Students B, and C independently:
+
+1. Forked Student A's original repository into their own GitHub accounts.
+2. Cloned their respective forks onto their local machines.
+3. Configured Student A's original repository as the `upstream` remote.
+4. Verified remote configurations using:
+
+```bash
+git remote -v
+```
+
+### Understanding `origin` vs `upstream`
+
+In a forked repository workflow, two distinct remotes are used:
+
+| Remote | Purpose |
+|--------|---------|
+| `origin` | Points to the student's own GitHub fork. Used for `git push` to send local commits to their fork, and `git fetch` to pull changes from their fork. |
+| `upstream` | Points to the original repository (the maintainer's repo). Used to pull in upstream changes that are not yet in the fork. |
+
+Key differences:
+
+- **`origin`** is the student's personal copy on GitHub. Pushes go here; pulls from here come back to the local machine.
+- **`upstream`** is the canonical repository maintained by Student A. The student can only read from it (fetch), never push to it directly. Changes must flow through pull requests.
 
 ### Step 3 — Synchronize the Forks
-TODO: In your report, briefly explain the difference between `origin` and `upstream` and describe how the synchronization was performed.
+
+After the initial forks were created:
+
+1. Student A made a small update to the project's README and pushed the change to the original repository.
+2. Students B and C synchronized their local repositories and GitHub forks with the updated original repository.
+3. Each student verified that the README update was available in their fork.
+
+### Synchronization Process
+
+Synchronization was performed using the following commands:
+
+```bash
+# Fetch changes from upstream
+git fetch upstream
+
+# Merge upstream changes into the local main branch
+git merge upstream/main
+
+# Push the updated local main branch to the student's fork (origin)
+git push origin main
+```
 
 ---
 
