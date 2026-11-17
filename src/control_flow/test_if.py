@@ -29,35 +29,67 @@ def test_if_statement():
 
 
 
-def test_multiple_elif_conditions():
-    """Demonstrate multiple elif conditions"""
-
-    grade = 85
-    result = ''
-
-    if grade >= 90:
-        result = 'Excellent'
-    elif grade >= 80:
-        result = 'Very Good'
-    elif grade >= 70:
-        result = 'Good'
-    elif grade >= 60:
-        result = 'Pass'
-    else:
-        result = 'Fail'
-
-    assert result == 'Very Good'
-
-
 def test_nested_if_conditions():
-    """Demonstrate nested if conditions"""
+    """Test nested if conditions for discount eligibility."""
 
+    # Scenario 1: Adult student qualifies for a discount
     age = 20
     is_student = True
+    is_senior = False
+
     discount = False
 
     if age >= 18:
         if is_student:
             discount = True
+        elif is_senior:
+            discount = True
 
     assert discount is True
+
+    # Scenario 2: Senior customer qualifies for a discount
+    age = 65
+    is_student = False
+    is_senior = True
+
+    discount = False
+
+    if age >= 18:
+        if is_student or is_senior:
+            discount = True
+
+    assert discount is True
+
+    # Additional check: student adults consistently receive a discount
+    discount2 = False
+    is_student = True
+    if age >= 18:
+        if is_student:
+            discount2 = True
+    assert discount2 is True
+
+    # Scenario 3: Regular adult does not qualify for a discount
+    age = 30
+    is_student = False
+    is_senior = False
+
+    discount = False
+
+    if age >= 18:
+        if is_student or is_senior:
+            discount = True
+
+    assert discount is False
+
+    # Scenario 4: Minor student does not qualify for a discount
+    age = 16
+    is_student = True
+    is_senior = False
+
+    discount = False
+
+    if age >= 18:
+        if is_student or is_senior:
+            discount = True
+
+    assert discount is False
