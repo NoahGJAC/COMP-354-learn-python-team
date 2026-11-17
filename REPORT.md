@@ -244,7 +244,7 @@ Each team must submit one PDF report to Moodle. The report must contain the foll
 A comprehensive set of screenshots demonstrating the actual execution of the assignment is mandatory. Screenshots must clearly demonstrate:
 
 - [x] Creation of the original repository and its initial commits.
-- [ ] The three GitHub forks and local clones.
+- [ ] The two GitHub forks and local clones.
 -  [ ] `origin` and `upstream` remote configurations.
 -  [ ] Successful synchronization of the forks.
 -  [ ] Individual development branches.
