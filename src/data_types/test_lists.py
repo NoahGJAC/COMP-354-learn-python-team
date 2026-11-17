@@ -350,3 +350,104 @@ def test_nested_list_comprehensions():
         (3, 7, 11),
         (4, 8, 12),
     ]
+
+
+def test_list_sorting():
+    """List sorting examples."""
+
+    numbers = [5, 2, 8, 1, 9, 3]
+
+    # sort() sorts the list in place in ascending order
+    numbers.sort()
+    assert numbers == [1, 2, 3, 5, 8, 9]
+
+    # sort() with reverse=True sorts in descending order
+    numbers.sort(reverse=True)
+    assert numbers == [9, 8, 5, 3, 2, 1]
+
+    # sorted() returns a new sorted list without modifying the original
+    original = [5, 2, 8, 1, 9, 3]
+    sorted_numbers = sorted(original)
+    assert sorted_numbers == [1, 2, 3, 5, 8, 9]
+    assert original == [5, 2, 8, 1, 9, 3]
+
+    # sort() with key parameter to sort by string length
+    words = ['banana', 'apple', 'cherry', 'date']
+    words.sort(key=len)
+    assert words == ['date', 'apple', 'banana', 'cherry']
+
+
+def test_list_filtering():
+    """List filtering examples using comprehensions and built-ins."""
+
+    numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    # Filter even numbers using a list comprehension
+    even_numbers = [x for x in numbers if x % 2 == 0]
+    assert even_numbers == [2, 4, 6, 8, 10]
+
+    # Filter odd numbers using a list comprehension
+    odd_numbers = [x for x in numbers if x % 2 != 0]
+    assert odd_numbers == [1, 3, 5, 7, 9]
+
+    # Filter numbers greater than 5
+    greater_than_five = [x for x in numbers if x > 5]
+    assert greater_than_five == [6, 7, 8, 9, 10]
+
+    # Filter using filter() built-in function
+    positive = [-3, -1, 0, 2, 5]
+    filtered = list(filter(lambda x: x > 0, positive))
+    assert filtered == [2, 5]
+
+
+def test_list_slicing():
+    """List slicing examples."""
+
+    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+
+    # Slice from index 2 to index 5 (exclusive)
+    assert letters[2:5] == ['c', 'd', 'e']
+
+    # Slice from the beginning to index 4 (exclusive)
+    assert letters[:4] == ['a', 'b', 'c', 'd']
+
+    # Slice from index 5 to the end
+    assert letters[5:] == ['f', 'g', 'h']
+
+    # Slice with step of 2
+    assert letters[::2] == ['a', 'c', 'e', 'g']
+
+    # Reverse the list using slicing
+    assert letters[::-1] == ['h', 'g', 'f', 'e', 'd', 'c', 'b', 'a']
+
+    # Slice from index -4 to index -1 (exclusive)
+    assert letters[-4:-1] == ['e', 'f', 'g']
+
+
+def test_list_concatenation_and_replication():
+    """List concatenation and replication examples."""
+
+    # Concatenation combines two lists into a new list
+    first = [1, 2, 3]
+    second = [4, 5, 6]
+    combined = first + second
+    assert combined == [1, 2, 3, 4, 5, 6]
+
+    # Replication repeats the list contents
+    repeated = ['a'] * 3
+    assert repeated == ['a', 'a', 'a']
+
+    # Concatenation does not modify the original lists
+    assert first == [1, 2, 3]
+    assert second == [4, 5, 6]
+
+
+def test_list_membership():
+    """List membership examples using the in operator."""
+
+    fruits = ['apple', 'banana', 'cherry']
+
+    assert 'apple' in fruits
+    assert 'banana' in fruits
+    assert 'orange' not in fruits
+    assert 'grape' not in fruits
