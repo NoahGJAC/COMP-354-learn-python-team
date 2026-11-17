@@ -98,19 +98,19 @@ git push origin main
 ## 5. Part B — Collaborative Development and Pull Requests
 
 Student A (`src/data_types/test_lists.py`):
-![Noah's PR](./docs/screenshots/Student-A-PR.png)
+![Noah's PR](./docs/screenshots/Student-A-PR.png)  
 *Noah's PR*
 
 Student B (`src/data_types/test_dictionaries.py`):
-![Daniel's PR](./docs/screenshots/Student-B-PR.png)
+![Daniel's PR](./docs/screenshots/Student-B-PR.png)  
 *Daniel's PR*
 
 Student C (`src/control_flow/test_if.py`):
-![Anis's PR](./docs/screenshots/Student-C-PR.png)
+![Anis's PR](./docs/screenshots/Student-C-PR.png)  
 *Anis's PR*
 
 Student D (`src/functions/test_function_definition.py`):
-![Noah's 2nd PR](./docs/screenshots/Student-D-PR.png)
+![Noah's 2nd PR](./docs/screenshots/Student-D-PR.png)  
 *Noah's 2nd PR*
 
 ### Development Requirements
