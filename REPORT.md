@@ -147,11 +147,13 @@ For all four pull requests:
 ### Conflict 1 — Command-Line Resolution
 
 **Participants:** Students A and B  
-**Use the existing file:** `src/data_types/test_lists.py`
+**Used the existing file:** `src/data_types/test_lists.py`
 
-Students A and B must:
 ![Conflict Separate Branches](./docs/screenshots/Conflict_branches.png)
 *Separate Branches for Conflict 1 & 2*
+
+![Github Merge Conflict](./docs/screenshots/Conflict_1.png)
+*Github Merge Conflict*
 
 ![Git Bash Checkout](./docs/screenshots/CLI_Checkout.png)
 *Git Bash Checkout*
@@ -173,31 +175,37 @@ Students A and B must:
 ### Conflict 2 — GUI Resolution
 
 **Participants:** Students C and A
-**Use the existing file:** `src/control_flow/test_if.py`
+**Used the existing file:** `src/control_flow/test_if.py`
 
-Students C and A must:
+![VSCode Git Conflict](./docs/screenshots/GUI_Conflict.png)
+*VSCode Git Extension Conflict*
 
-1. Create separate branches from the same starting commit.
-2. Independently modify overlapping lines in an existing conditional statement example.
-3. Commit their changes separately.
-4. Integrate the first branch.
-5. Attempt to integrate the second branch to produce another merge conflict.
-6. Resolve the conflict using the graphical merge editor in **VS Code or PyCharm**.
-7. Preserve the intended functionality of both modifications.
-8. Commit the resolved version.
+![VSCode Merge Editor](./docs/screenshots/GUI_Merge_Editor.png)
+*VSCode Merge Editor*
 
-### Required Evidence for Both Conflicts
+![Github Merge Conflict](./docs/screenshots/Conflict_2.png)
+*Github Merge Conflict*
 
-Your team must:
+![Conflict Separate Branches](./docs/screenshots/GUI_Staged_Changes.png)
+*VSCode Stashed Changes After Merge*
 
-- Demonstrate the conflicting changes before resolution.
-- Capture the conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`).
-- Explain why Git could not automatically merge the changes.
-- Document the resolution process.
-- Show the final resolved code.
-- Demonstrate that the modified tests execute successfully.
+![Main branch with Noah's Changes](./docs/screenshots/Git_Blame_Noah_2.png)
+![Main branch with Daniel's Changes](./docs/screenshots/Git_Blame_Anis.png)
+*Main Branch with Noah's & Anis' Changes*
 
-> **Important:** The team must actually create and resolve both conflicts. Screenshots or explanations of hypothetical conflicts are insufficient. The two conflicts must be distinct, and one must be resolved using the CLI while the other must be resolved using a GUI merge editor.
+For both conflicts, Git could not automatically merge the changes because both branches modified the exact same lines of code with different changes. Git doesn't know which version should be kept, or both. Therefore it hands the final decision over to the user to determine how the merge conflict should be handled.
+
+The resolution process was the following:
+1. Inspect the merge conflict.
+2. Edit the files with a merge editor or by using the conflict markers.
+3. Test the changes.
+4. Stage the merge resolution
+5. Commit and push the merge
+
+Demonstrate that the modified tests execute successfully:
+![Pytest Run](./docs/screenshots/Test_Results.png)
+*Results of Pytest.*
+**Note: The only failing tests were existing failures in the project, not changes by us. All of our tests passed (79/81).**
 
 ---
 
