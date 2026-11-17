@@ -5,8 +5,8 @@
 | Name | ID | Github Username | Assigned Responsibilities |
 |------|----|-----------------|---------------------------|
 | Noah Groleau | 40312953 | NoahGJAC | Repository Maintainer (Student A) and Student D due to team of 3 |
-| Daniel Haselock| TODO | DanielHaselock | Student B|
-| Anis Alouache | TODO | vonAdlee | Student C | 
+| Daniel Haselock | 40276733 | DanielHaselock | Student B|
+| Anis Alouache | 40273373  | vonAdlee | Student C | 
 ---
 
 ### GitHub Repositories
@@ -209,12 +209,39 @@ Demonstrate that the modified tests execute successfully:
 After all contributions and conflict resolutions have been integrated, the team must perform a final verification.
 
 ### Step 1 — Verify the Integrated Project
-TODO:
-The team must:
 
-1. Confirm that all four students' improvements are present in the original repository.
-2. Verify that the two conflict resolutions did not remove any required functionality.
-3. Confirm that the final version is available on the `main` branch of Student A's repository.
+
+The final version of src/control_flow/test_if.py was inspected directly from the original repository's main branch using:
+
+```bash
+
+git show upstream/main:src/control_flow/test_if.py
+```
+
+The Git history was also inspected using:
+
+```bash
+
+git log upstream/main --oneline -- src/control_flow/test_if.py
+```
+
+![Git history](./docs/screenshots/Git%20Commit%20history.png) Git Commit History Showing Student C and Student D's Contributions to Conflict 2
+
+The final integrated version was confirmed on Student A's original repository.
+
+The following command was executed:
+
+```bash
+git log upstream/main -1 --oneline
+```
+
+The output was:
+
+```bash
+0f20afa (tag: v1.0.0, upstream/main, upstream/HEAD, origin/main, origin/HEAD, main) Merge pull request #5 from NoahGJAC/student-a/lists
+```
+
+This confirms that the local main, Student A's original upstream/main, and the fork's origin/main all point to the same final commit, tagged v1.0.0
 
 ### Step 2 — Examine the Git History
 
