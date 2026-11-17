@@ -2,11 +2,6 @@
 
 ## Team Information
 
-Include:
-- Names and student IDs of all four team members.
-- GitHub usernames.
-- Assigned responsibilities.
-
 | Name | ID | Github Username | Assigned Responsibilities |
 |------|----|-----------------|---------------------------|
 | Noah Groleau | 40312953 | NoahGJAC | Repository Maintainer (Student A) and Student D due to team of 3 |
@@ -198,7 +193,7 @@ For both conflicts, Git could not automatically merge the changes because both b
 The resolution process was the following:
 1. Inspect the merge conflict.
 2. Edit the files with a merge editor or by using the conflict markers.
-3. Test the changes.
+3. Test the changes to verify the required functionality was preserved.
 4. Stage the merge resolution
 5. Commit and push the merge
 
@@ -341,66 +336,76 @@ Breakdown of major contributions and merges from the git history:
 
 ### Step 3 — Create a Release Tag
 
-Create a Git release tag named:
+Tagged Release found here: [https://github.com/NoahGJAC/COMP-354-learn-python-team/releases/tag/v1.0.0](https://github.com/NoahGJAC/COMP-354-learn-python-team/releases/tag/v1.0.0)
 
-```
-v1.0.0
-```
-
-Push the tag to the original GitHub repository.
+![Tagged Release](./docs/screenshots/Tagged_Release.png)
+*Tagged Release*
 
 ### Step 4 — Prepare the SCM Report
 
-Prepare a short report documenting the team's practical work, GitHub collaboration, conflict resolution, and final verification.
+# Team Practical Work & SCM Report
 
----
+## GitHub Collaboration
 
-## 8. Submission Requirements
+12 pull requests total, 11 merged and 1 closed:
 
-Each team must submit one PDF report to Moodle. The report must contain the following sections.
+| PR | Branch | Author | Merged Into | Content |
+|----|--------|--------|-------------|---------|
+| #1 | main | DanielHaselock | main | upstream screenshot |
+| #2 | main | vonAdlee | main | screenshots added |
+| #3 | student-b/dictionary-operations | DanielHaselock | main | dict update, retrieval, removal |
+| #4 | student-d/function-definition | NoahGJAC | main | `*arg` method + function tests |
+| #5 | student-a/lists | NoahGJAC | main | list examples, concat & replication |
+| #6 | student-C/conditional-examples | vonAdlee | main | `elif` + nested `if` |
+| #7 | student-a-conflict-1 | NoahGJAC | main | transpose matrix assertion |
+| #8 | student-d-conflict-2 | NoahGJAC | main | age discount check |
+| #9 | student-c-conflict-2 | vonAdlee | main | nested if discount eligibility tests |
+| #11 | conflict1-studentB | DanielHaselock | main | nested_list_comprehensions conflict resolution |
+| #12 | student-a-conflict-1 | NoahGJAC | main | Student-A conflict 1 |
+| #10 | conflict-1-student-b | DanielHaselock | main | **CLOSED** (not merged) |
 
-### C. Practical Evidence — Screenshots
+Each student created a separate development branch, made ≥2 meaningful commits, added assertions/tests, and underwent code review before merging.
 
-A comprehensive set of screenshots demonstrating the actual execution of the assignment is mandatory. Screenshots must clearly demonstrate:
+## Conflict Resolution
 
-- [x] Creation of the original repository and its initial commits.
-- [ ] The two GitHub forks and local clones.
--  [ ] `origin` and `upstream` remote configurations.
--  [ ] Successful synchronization of the forks.
--  [ ] Individual development branches.
--  [ ] At least two meaningful commits per student.
--  [ ] The four pull requests.
--  [ ] Code review comments and successful merges.
--  [ ] Both merge conflicts before and after resolution.
--  [ ] Conflict markers and the CLI resolution process.
--  [ ] The GUI merge editor and the second conflict resolution.
--  [ ] Successful execution of the modified Python tests.
--  [ ] The final Git history and release tag.
+**Conflict 1 (CLI) — `src/data_types/test_lists.py`, Students A & B**
+- Both branches edited the same lines; Git could not auto-merge.
+- Resolved via Git Bash: inspected conflict markers, edited manually, staged, committed, pushed (PR #11, Daniel; PR #12, Noah).
 
-Screenshots must be readable, appropriately labeled, and accompanied by brief explanations.
+**Conflict 2 (GUI) — `src/control_flow/test_if.py`, Students C & A**
+- Same file, overlapping changes; resolved using VS Code's merge editor (PR #9, Anis).
 
-### D. Conflict Resolution Discussion
+Resolution process for both: inspect conflict → edit with merge editor/markers → test → stage → commit → push.
 
-Briefly explain:
+## Final Verification
 
-1. What caused each merge conflict.
-2. Why Git could not merge the changes automatically.
-3. How the conflict was resolved.
-4. How the team verified that the required functionality was preserved.
+Ran the full pytest suite on `src/`:
 
-### E. Final Results
+```
+79 passed, 2 failed
+```
 
-Summarize:
+The 2 failures are pre-existing issues unrelated to the team's changes:
+- `test_function_documentation_string.py`
+- `test_glob.py` 
 
-- The improvements made to the existing Python project.
-- The testing results.
-- Each student's contributions.
-- Any significant challenges encountered during the Git/GitHub workflow.
+### Final Results
 
----
+**Improvements**
+- List concat/replication examples (`test_lists.py`)
+- `*arg` function method + tests (`test_function_definition.py`)
+- dictionary update, safe retrieval/removal with validation notes (`test_dictionaries.py`)
+- `elif` and nested `if` conditional examples (`test_if.py`)
 
-## 9. Important Submission and Grading Instructions
+**Testing results**
+- Full `pytest` run on `src/`: **79 passed, 2 failed**.
 
-### Moodle Submission
+**Student contributions**
+- **Noah (NoahGJAC, Student A + D):** repo maintainer; lists examples + concat/replication; `*arg` method + function tests; conflict-1 and conflict-2 resolutions.
+- **Daniel (DanielHaselock, Student B):** dictionary operations; conflict-1 resolution via CLI.
+- **Anis (vonAdlee, Student C):** `elif`/nested `if` conditionals; conflict-2 resolution via VS Code GUI merge editor.
 
-Submit the complete **PDF** report.
+**Challenges**
+- Two deliberate merge conflicts on the same files (`test_lists.py`, `test_if.py`) requiring manual resolution — Conflict 1 via Git Bash/CLI, Conflict 2 via VS Code GUI merge editor.
+- One PR (#10, Student B conflict-1) was closed, not merged; the resolution was re-submitted as PR #11.
+- Pre-existing test failures.
