@@ -50,14 +50,29 @@ def test_multiple_elif_conditions():
 
 
 def test_nested_if_conditions():
-    """Demonstrate nested if conditions"""
+    """Test nested if conditions for discount eligibility."""
 
     age = 20
     is_student = True
+    is_senior = False
+
     discount = False
 
     if age >= 18:
-        if is_student:
+        if is_student or is_senior:
+            discount = True
+
+    assert discount is True
+
+    # Test discount eligibility for senior customers
+    age = 65
+    is_student = False
+    is_senior = True
+
+    discount = False
+
+    if age >= 18:
+        if is_student or is_senior:
             discount = True
 
     assert discount is True
