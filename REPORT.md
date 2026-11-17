@@ -150,17 +150,25 @@ For all four pull requests:
 **Use the existing file:** `src/data_types/test_lists.py`
 
 Students A and B must:
+![Conflict Separate Branches](./docs/screenshots/Conflict_branches.png)
+*Separate Branches for Conflict 1 & 2*
 
-1. Create separate branches from the same starting commit.
-2. Independently modify overlapping lines in an existing test function.
-3. Commit their changes separately.
-4. Integrate the first branch.
-5. Attempt to integrate the second branch to produce a Git merge conflict.
-6. Resolve the conflict using the Git command-line interface (CLI).
-7. Ensure that the final version preserves the intended changes from both students.
-8. Commit the resolved version.
+![Git Bash Checkout](./docs/screenshots/CLI_Checkout.png)
+*Git Bash Checkout*
 
-> For example, the two students may modify the same list example by adding different operations or assertions. The final resolution should preserve both intended improvements rather than simply discarding one student's work.
+![Git Bash Merge Conflict](./docs/screenshots/CLI_Conflict.png)
+*Git Bash Merge Conflict*
+
+![Conflict 1 Conflict Markers](./docs/screenshots/CLI_Conflict_Markers.png)
+*Conflict 1 Conflict Markers*
+
+![Conflict Separate Branches](./docs/screenshots/CLI_Merged.png)
+![Conflict Separate Branches](./docs/screenshots/CLI_Push.png)
+*Git Bash Merge And Push*
+
+![Main branch with Noah's Changes](./docs/screenshots/Git_Blame_Noah.png)
+![Main branch with Daniel's Changes](./docs/screenshots/Git_Blame_Daniel.png)
+*Main Branch with Noah's & Daniel's Changes*
 
 ### Conflict 2 — GUI Resolution
 
