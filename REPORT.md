@@ -214,7 +214,7 @@ Demonstrate that the modified tests execute successfully:
 After all contributions and conflict resolutions have been integrated, the team must perform a final verification.
 
 ### Step 1 — Verify the Integrated Project
-
+TODO:
 The team must:
 
 1. Confirm that all four students' improvements are present in the original repository.
@@ -223,13 +223,121 @@ The team must:
 
 ### Step 2 — Examine the Git History
 
-Use the following command:
-
 ```bash
 git log --oneline --decorate --graph --all
 ```
 
-Examine the resulting commit history and identify the major contributions and merges.
+The results can be seen below or in `docs/git_log.txt`:
+```
+* 21832e3 (COMP-354-learn-python-team/tech/report, tech/report) Conflict 2 report
+* cae048d report for conflict 1
+* bf7adf7 add pr screenshots, update report
+* 20a4270 add CLI & GUI merge screenshots
+* 1a908c8 add conflict screenshots
+* 4ea400e update report
+* c46ec22 step 2 & 3
+| *   0f20afa (HEAD -> main, COMP-354-learn-python-team/main, COMP-354-learn-python-team/HEAD) Merge pull request #5 from NoahGJAC/student-a/lists
+| |\  
+| | * b5657ab (COMP-354-learn-python-team/student-a/lists, student-a/lists) add list concat and replication
+| | * 3120587 add list examples
+| * |   ceacfb3 Merge pull request #9 from vonAdlee/student-c-conflict-2
+| |\ \  
+| | * \   f36e8c6 (vonAdlee/student-c-conflict-2, student-c-conflict-2) Merge branch 'main' into student-c-conflict-2
+| | |\ \  
+| | |/ /  
+| |/| |   
+| * | |   9432132 Merge pull request #11 from DanielHaselock/conflict1-studentB
+| |\ \ \  
+| | * \ \   b586a27 (conflict1-studentB) Merge remote-tracking branch 'COMP-354-learn-python-team/main' into conflict1-studentB
+| | |\ \ \  
+| | |/ / /  
+| |/| | |   
+| * | | |   2508855 Merge pull request #8 from NoahGJAC/student-d-conflict-2
+| |\ \ \ \  
+| | * | | | 0a41171 (COMP-354-learn-python-team/student-d-conflict-2, student-d-conflict-2) additional check tfor age discount
+| |/ / / /  
+|/| | | |   
+| * | | |   e8f8146 Merge pull request #12 from NoahGJAC/student-a-conflict-1
+| |\ \ \ \  
+| | * | | | 6d21eed (COMP-354-learn-python-team/student-a-conflict-1, student-a-conflict-1) change transpose logic
+| * | | | | ec1485e Merge pull request #7 from NoahGJAC/student-a-conflict-1
+|/| | | | | 
+| |/ / / /  
+| * / / / e51b75c add an assert
+|/ / / /  
+| * / / 9340791 Added conflict in nested_list_comprehensions
+|/ / /  
+| * | c310ca8 Expand nested discount eligibility tests
+| * | 179ab84 Add senior discount eligibility test
+|/ /  
+* |   e50863e Merge pull request #3 from DanielHaselock/student-b/dictionary-operations
+|\ \  
+| * | a27c9fa Add safe dictionary retrieval and removal examples with validation notes
+| * | 95f5166 Add dictionary update example for existing and new keys
+| |/  
+* |   4fe798b Merge pull request #6 from vonAdlee/student-C/conditional-examples
+|\ \  
+| * | c8d3f71 (vonAdlee/student-C/conditional-examples) Add nested if
+| * | 63d2460 Add elif conditional examples
+| |/  
+* |   ba04dea Merge pull request #4 from NoahGJAC/student-d/function-definition
+|\ \  
+| |/  
+|/|   
+| * aa34629 (COMP-354-learn-python-team/student-d/function-definition, student-d/function-definition) add *arg method
+| * 04c3f42 add function tests
+|/  
+*   fbe6781 Merge branch 'main' of https://github.com/NoahGJAC/COMP-354-learn-python-team
+|\  
+| *   f82bfec Merge pull request #2 from vonAdlee/main
+| |\  
+| | * 15b4d24 (vonAdlee/main, vonAdlee/HEAD) Merge pull request #1 from vonAdlee/documents/screenshots
+| |/| 
+| | * 83f5442 (vonAdlee/documents/screenshots) Add files via upload
+| |/  
+* / f08d438 small changes
+|/  
+*   4a51efd Merge pull request #1 from DanielHaselock/main
+|\  
+| * 40c6dc4 add upstream screenshot
+|/  
+* f225a01 add report and pull request template
+* fa8f9dd initizalize repo with learn-python files
+```
+
+Breakdown of major contributions and merges from the git history:
+
+#### Branches
+- `main`
+
+- `student-a/lists` — NoahGJAC
+-  `student-a-conflict-1` — NoahGJAC
+- `student-c-conflict-2` — vonAdlee
+- `conflict1-studentB` — DanielHaselock
+- `student-d-conflict-2` — NoahGJAC
+- `student-d/function-definition` — NoahGJAC
+
+#### Major feature merges into main
+| PR | Branch | Author |
+|----|--------|--------|
+| #5 | `student-a/lists` | NoahGJAC | 
+| #4 | `student-d/function-definition` | NoahGJAC |
+| #6 | `student-C/conditional-examples` | vonAdlee |
+| #3 | `student-b/dictionary-operations` | DanielHaselock |
+
+#### Conflict-resolution merges into main
+| PR | Branch | Author |
+|----|--------|--------|
+| #12 | `student-a-conflict-1` | NoahGJAC | 
+| #8 | `student-d-conflict-2` | NoahGJAC | 
+| #9 | `student-c-conflict-2` | vonAdlee |
+| #11 | `conflict1-studentB` | DanielHaselock | 
+
+#### Conflict-introducing commits
+- `9340791` — "Added conflict in nested_list_comprehensions" (student-a-conflict-1)
+- `c310ca8` — "Expand nested discount eligibility tests"
+- `179ab84` — "Add senior discount eligibility test"
+- `0a41171` — "additional check for age discount" (student-d-conflict-2)
 
 ### Step 3 — Create a Release Tag
 
