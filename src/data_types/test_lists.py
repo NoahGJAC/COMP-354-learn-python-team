@@ -290,14 +290,21 @@ def test_nested_list_comprehensions():
         [9, 10, 11, 12],
     ]
 
-    # The following list comprehension will transpose rows and columns:
-    transposed_matrix = [[row[i] for row in matrix] for i in range(4)]
+    # Transpose the matrix using zip() and a list comprehension.
+    transposed_matrix = [list(column) for column in zip(*matrix)]
+
     assert transposed_matrix == [
         [1, 5, 9],
         [2, 6, 10],
         [3, 7, 11],
         [4, 8, 12],
     ]
+
+    # Verify the dimensions and individual elements.
+    assert len(transposed_matrix) == 4
+    assert all(len(row) == 3 for row in transposed_matrix)
+    assert transposed_matrix[0][0] == 1
+    assert transposed_matrix[3][2] == 12
 
     # As we saw in the previous section, the nested listcomp is evaluated in the context of the
     # for that follows it, so this example is equivalent to:
@@ -326,6 +333,13 @@ def test_nested_list_comprehensions():
         [2, 6, 10],
         [3, 7, 11],
         [4, 8, 12],
+    ]
+
+    # Student A addition: verify the original matrix is unchanged after transposition.
+    assert matrix == [
+        [1, 2, 3, 4],
+        [5, 6, 7, 8],
+        [9, 10, 11, 12],
     ]
 
     # In the real world, you should prefer built-in functions to complex flow statements.
